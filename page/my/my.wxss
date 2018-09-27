@@ -1,0 +1,27 @@
+/* page/my/my.wxss */
+page{background: #F6F6F6;}
+
+.box{box-sizing: border-box;padding: 0 30rpx;position: relative;z-index: 2;}
+
+.box .top{width: 100%;height: 180rpx;background: #fff;border-radius: 10rpx;box-sizing: border-box;padding: 40rpx 0 40rpx 190rpx;position: relative;}
+.box .top .avatar{display: block;position: absolute;left: 30rpx;top: 25rpx;width: 130rpx;height: 130rpx;border-radius: 50%;overflow: hidden;}
+.box .top .nickname{font-size: 32rpx;font-weight: 600;}
+.box .top .money{font-size: 24rpx;color: #FBD133;margin-top: 15rpx;}
+.box .top .money image{width:25rpx;height: 25rpx;margin-right: 10rpx;}
+.box .top .qiandao{position: absolute;right: 30rpx;top: 35rpx;text-align: center;}
+.box .top .qiandao image{display: block;width: 50rpx;height: 50rpx;margin: 10rpx auto;}
+
+.all{position: relative;width: 100%;height: 120rpx;background: #fff;margin-top: 40rpx;line-height: 120rpx;box-sizing: border-box;padding-left: 110rpx;font-size: 30rpx;border-radius: 5rpx;}
+.all image{display: block;position: absolute;left: 30rpx;top: 35rpx;width: 50rpx;height: 50rpx;}
+
+.nav{position: relative;width: 100%;height: 120rpx;background: #fff;margin-top: 15rpx;box-sizing: border-box;padding: 25rpx 0;padding-left: 110rpx;font-size: 30rpx;border-radius: 5rpx;}
+.nav .n_image{display: block;position: absolute;left: 30rpx;top: 35rpx;width: 50rpx;height: 50rpx; text-align: center; line-height: 50rpx;}
+.nav .n_image image{width: 50rpx;height: 50rpx; margin: 0 auto; display: block }
+.nav .n_tit{font-size: 28rpx;}
+.nav .n_con{font-size: 24rpx;color: #aaa;}
+.nav .n_btn{width: 140rpx;line-height: 50rpx;text-align: center;font-size: 22rpx;color: #fff;border-radius: 30rpx;position: absolute;right: 30rpx;top: 35rpx;background: #536FF2;}
+.nav.over .n_btn{background: #D2D2D2;}
+.nav.ok .n_btn{background: #FBBA22}
+
+
+

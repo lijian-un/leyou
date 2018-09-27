@@ -1,0 +1,58 @@
+<!--index.wxml-->
+<import src="../../component/hSwiper/hSwiper.wxml"/>
+<!--轮播-->
+<view id="mainContainer">
+  <template is="hSwiper" data="{{...hSwiperVar}}"></template>
+</view>
+<!-- 标题 -->
+<view class='title'>
+    <image src='../../image/home_hot.png'></image>热门游戏
+</view>
+<!-- 热门游戏 -->
+<view class='hot clear'>
+  <block wx:for="{{hot_data}}">
+    <navigator class='hot_item' target='miniProgram' app-id="{{item.WxAppId}}" data-appid="{{item.WxAppId}}" data-type="{{item.AppType}}" bindsuccess='game_click'>
+        <image src='{{item.Icon}}'></image>{{item.Name}}
+    </navigator>
+  </block>
+</view>
+<view class='bg_10'></view>
+
+<!-- 标题 -->
+<view class='title' style='margin-top:20rpx;'>
+    <image src='../../image/home_news.png'></image>精选游戏
+</view>
+
+<!-- 精选游戏 -->
+<view class='list'>
+  <navigator class='list_item' target='miniProgram' app-id="wxd4abb0f4db18da79" version="release" data-appid="wxd4abb0f4db18da79" data-type="minigame" bindsuccess='game_click'>
+      <image src='https://resource.leyougame.cc/icon/bwcz.png'></image>
+      <view class='i_tit'>牛仔跑酷</view>
+      <view class='i_message ellipsis-2'>牛仔跑酷，一起畅玩西部跑酷吧！</view>
+      <view class='i_btn'>马上玩</view>
+  </navigator>
+  <block wx:for="{{new_data}}">
+    <navigator class='list_item' target='miniProgram' app-id="{{item.WxAppId}}" data-appid="{{item.WxAppId}}" data-type="{{item.AppType}}" bindsuccess='game_click'>
+        <image src='{{item.Icon}}'></image>
+        <view class='i_tit'>{{item.Name}}</view>
+        <view class='i_message ellipsis-2'>{{item.Desc}}</view>
+        <view class='i_btn'>马上玩</view>
+    </navigator>
+  </block>
+  <view class='more'>更多游戏即将更新</view>
+</view>
+
+<!-- <view class='alert'>
+    <view class='box'>
+    <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+<view wx:else>请升级微信版本</view>
+    </view>
+</view> -->
+
+<dialog id='dialog' 
+      title='登录提示' 
+      content='小程序需要您的授权才能提供更好的服务哦' 
+      confirmText='知道了'
+      bind:confirmEvent='confirmEvent'
+      bind:bindGetUserInfo='bindGetUserInfo'>
+</dialog>

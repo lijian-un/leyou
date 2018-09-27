@@ -1,0 +1,58 @@
+<!--page/my/my.wxml-->
+<view style='width:100%;height:120rpx;position:absolute;left:0;top:0;background:#536FF2;z-index:1'></view>
+<view class='box'>
+    <view class='top'>
+        <image class='avatar' src='{{avatar}}'></image>
+        <view class='nickname'>{{nickname}}</view>
+        <view class='money'><image src='../../image/staring.png'></image>48888金币</view>
+        <view class='qiandao'><image src='../../image/qiandao.png'></image>签到</view>
+    </view>
+
+    <view class='all'>
+        <view class='n_image'><image src='../../image/richang.png'></image></view>日常任务（1/6）
+    </view>
+
+    <view class='nav over'>
+        <view class='n_image'><image src='../../image/qiandao.png'></image></view>
+        <view class='n_tit'>每日签到</view>
+        <view class='n_con'>10金币</view> 
+        <view class='n_btn'>已领取</view>
+    </view>
+    <view class='nav ok'>
+        <view class='n_image'><image src='../../image/fenxiang.png'></image></view>
+        <view class='n_tit'>好友分享</view>
+        <view class='n_con'>分享到群可得10金币</view> 
+        <view class='n_btn'>领金币</view>
+    </view>
+    <view class='nav'>
+        <view class='n_image'><image src='../../image/zhuanfa.png'></image></view>
+        <view class='n_tit'>分享3个不同的群</view>
+        <view class='n_con'>50金币</view> 
+        <view class='n_btn'>去完成</view>
+    </view>
+    <view class='nav'>
+        <view class='n_image'><image src='../../image/game3.png'></image></view>
+        <view class='n_tit'>玩3款小游戏</view>
+        <view class='n_con'>10金币</view> 
+        <view class='n_btn'>去完成</view>
+    </view>
+    <view class='nav'>
+        <view class='n_image'><image src='../../image/game5.png'></image></view>
+        <view class='n_tit'>玩5款小游戏</view>
+        <view class='n_con'>10金币</view> 
+        <view class='n_btn'>去完成</view>
+    </view>
+    <view class='nav'>
+        <view class='n_image'><image src='../../image/yaoqing.png'></image></view>
+        <view class='n_tit'>邀请3个好友</view>
+        <view class='n_con'>10金币</view> 
+        <view class='n_btn'>去完成</view>
+    </view>
+</view>
+<dialog id='dialog' 
+      title='登录提示' 
+      content='小程序需要您的授权才能提供更好的服务哦' 
+      confirmText='知道了'
+      bind:confirmEvent='confirmEvent'
+      bind:bindGetUserInfo='bindGetUserInfo'>
+</dialog>

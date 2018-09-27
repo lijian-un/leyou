@@ -1,0 +1,48 @@
+/**index.wxss**/
+@import "../../component/hSwiper/hSwiper.wxss";
+
+
+/*滚动图*/
+#mainContainer{height: 360rpx;width: 100%;position: relative;background: #fff;}
+#mainContainer image{display: block;width: 100%;height: 100%;}
+#mainContainer .dots{position: absolute;right: 40rpx;bottom: 30rpx;display: flex;justify-content: center;}  
+#mainContainer .dots .dot{margin: 0 10rpx;width: 20rpx;height: 20rpx;background: #fff;border-radius: 50%;transition: all .6s;}  
+#mainContainer .dots .dot.active{background: #f80;} 
+
+#mainContainer .swiper_nav{position: absolute;bottom: -120rpx;left: 25rpx;width: 700rpx;height: 180rpx;background: #fff;border-radius: 10rpx;}
+#mainContainer .swiper_nav .nav{text-align: center;}
+#mainContainer .swiper_nav .nav image{display: block;margin: 20rpx auto 10rpx;width: 90rpx;height: 90rpx;}
+#mainContainer .swiper_nav .nav text{line-height: 45rpx;font-size: 14px;display: block;}
+
+.itemSelf_1{width: 100%;height: 100%;background: gray;color: #fff;}
+.itemSelf_2{width: 100%;height: 100%;background: gray;color: #fff;position: relative;}
+.itemSelf_2 .item_tit{position: absolute;left: 0;bottom: 0;width: 100%;line-height: 80rpx;box-sizing: border-box;padding: 0 20rpx;background: rgba(0,0,0,0.5);font-size: 16px;}
+.itemSelf_3{width: 100%;height: 100%;background: gray;color: #fff;box-sizing: border-box;padding: 20rpx;background: #fff;}
+.itemSelf_3 image{border-radius: 15rpx;box-shadow: 3px 2px 5px 1px #aaa;}
+.itemSelf_4{box-sizing:border-box;margin: 50rpx 10rpx;overflow: hidden;height: 260rpx;width: 96%;}
+.itemSelf_4 image{border-radius: 20rpx;height:300rpx;display: block;}
+.itemSelf_4.itemOn{margin: 25rpx 10rpx;height: 310rpx;} 
+
+.top{position: fixed;left: 0;top: 0;width: 100%;z-index: 999;}
+.weui-search-bar{padding: 5px 10px;}
+.weui-search-bar__cancel-btn {line-height: 1;padding: 20rpx 0 12rpx;}
+
+
+swiper{height:350rpx;}
+swiper image{height:350rpx;width:100%;}
+
+.title{line-height: 90rpx;box-sizing: border-box;padding: 0 100rpx;position: relative;font-size: 32rpx;}
+.title image{width: 50rpx;height: 50rpx;display: block;position: absolute;left: 35rpx;top: 20rpx;}
+
+.hot{box-sizing: border-box;}
+.hot .hot_item{width: 25%;float: left;box-sizing: border-box;padding: 25rpx 5rpx;font-size: 20rpx;text-align: center;}
+.hot .hot_item image{display: block;width: 100rpx;height: 100rpx;margin: 0 auto 15rpx;border-radius: 15rpx;overflow: hidden;}
+
+.list_item{box-sizing: border-box;position: relative;width: 100%;height: 160rpx;padding: 30rpx 150rpx 30rpx 170rpx;}
+.list_item image{display: block;width: 90rpx;height: 90rpx;position: absolute;left: 40rpx;top: 40rpx;border-radius: 10rpx;overflow: hidden;}
+.list_item .i_tit{font-size: 28rpx;color: #000;}
+.list_item .i_message{font-size: 22rpx;color: #666;}
+.list_item .i_btn{width: 100rpx;height: 40rpx;line-height: 40rpx;border-radius: 20rpx;text-align: center;font-size: 20rpx;color: #fff;background: #536FF2;position: absolute;right: 30rpx;top: 70rpx;}
+.more{font-size: 20rpx;text-align: center;color: #ddd;margin-top: 10rpx;line-height: 30rpx;}
+
+.alert{position: fixed;z-index: 99;left: 0;top: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.5);}

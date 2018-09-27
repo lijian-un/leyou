@@ -1,0 +1,29 @@
+
+
+<template name="swiper1">
+	<view class="itemSelf_1" data-idx="{{index}}" data-id="{{selIndex}}">
+    	<image src='{{item.image}}'></image>
+	</view>
+</template>
+
+<template name="swiper2">
+	<view class="itemSelf_2" data-idx="{{index}}" data-id="{{selIndex}}">
+    	<image src='{{item.image}}'></image>
+      <view class='item_tit'>标题</view>
+	</view>
+</template>
+
+<template name="swiper3">
+	<view class="itemSelf_3" data-idx="{{index}}" data-id="{{selIndex}}">
+    	<image src='{{item.image}}'></image>
+	</view>
+</template>
+
+<template name="swiper4">
+  <view class="itemSelf_4 itemOn" data-appid="{{item.WxAppId}}" data-type="{{item.AppType}}" data-idx="{{index}}" wx:if="{{index == selIndex}}">
+    	<image src='{{item.Icon}}'></image>
+	</view>
+  <view class="itemSelf_4" data-appid="{{item.WxAppId}}" data-type="{{item.AppType}}" data-idx="{{index}}" wx:if="{{index != selIndex}}">
+    	<image src='{{item.Icon}}'></image>
+	</view>
+</template>

@@ -1,0 +1,20 @@
+<import src="../../component/hSwiper/hSwiperTemplate.wxml"/>
+
+<template name="hSwiper">
+	<view class="hSwiper" >
+    <view class='hSwiper_bg'></view>
+        <view class="hSwiperCon" 
+            animation="{{swiperAnmiation}}" 
+            bindtouchstart="{{'swiperTouchstart'+id}}"
+            bindtouchmove="{{'swiperTouchmove'+id}}"
+            bindtouchend="{{'swiperTouchend'+id}}"
+            style="{{wrapperStyleValue[wrapperStyle]}}" >
+
+            <block wx:for="{{list}}" wx:key="index" >   
+                <view class="item" style="{{itemStyle}}" data-id="{{nowView}}">
+                    <template is="swiper4" data="{{item,index,selIndex}}"></template>
+                </view>
+            </block>
+        </view>
+    </view>
+</template>
