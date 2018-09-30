@@ -1,43 +1,21 @@
 const homeUrl = require('../../config').homeUrl;
 const hSwiper = require("../../component/hSwiper/hSwiper.js");
 //获取应用实例
-var app = getApp();
+var app = getApp();var token = '';
 Page({
     data: {
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
         hSwiperVar: {},
         list: [],
         swiperCurrent: 0,
-        indexSwiper:{
-            show_type: 3,
-            data: [
-                {
-                    image:'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-                    id: 1
-                },
-                {
-                    image: 'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-                    id: 2
-                },
-                {
-                    image: 'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-                    id: 2
-                }
-            ]
-        }
+        indexSwiper:{}
     },
-  onLoad: function () {
+  onLoad: function (options) {
     // 生命周期函数--监听页面加载
-    var that = this;
-    wx.showShareMenu({
-      withShareTicket: true
-    })
-    that.getdata();
+    this.getdata();
   },
   onShow:function(){
-    wx.showShareMenu({
-      withShareTicket: true
-    })
+
   },
   onReady: function () {
       //获得dialog组件
@@ -103,29 +81,15 @@ Page({
       var data = {};
       data['logType'] = 2;
       data['type'] = 2;
-      data['toGame'] = dst.appid;
+      data['toGame'] = dst.gameid;
       app.add_log(data);
     },
     //分享功能
     onShareAppMessage: function () {
-        return {
-          title: '转发',
-          path: '/page/index',
-          success(e) {
-            if (e.shareTickets) {
-              // 获取转发详细信息
-              wx.getShareInfo({
-                shareTicket: e.shareTickets[0],
-                success(res) {
-                  res.errMsg; // 错误信息
-                  res.encryptedData;  //  解密后为一个 JSON 结构（openGId    群对当前小程序的唯一 ID）
-                  res.iv; // 加密算法的初始向量
-                },
-                fail() { },
-                complete() { }
-              });
-            }
-          }
-        }
+      return {
+        title:'你想玩的游戏这里都有',
+        imageUrl:'/image/zf_img.png',
+        path: '/page/index/index?shareToken=' + app.globalData.token,
+      };
     }
 })

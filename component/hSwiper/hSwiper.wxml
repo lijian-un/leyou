@@ -11,7 +11,8 @@
             style="{{wrapperStyleValue[wrapperStyle]}}" >
 
             <block wx:for="{{list}}" wx:key="index" >   
-                <view class="item" style="{{itemStyle}}" data-id="{{nowView}}">
+                <!-- <view class="item" style="{{itemStyle}}" data-id="{{nowView}}"> -->
+                <view class="item" style="width:620rpx" data-id="{{nowView}}">
                     <template is="swiper4" data="{{item,index,selIndex}}"></template>
                 </view>
             </block>

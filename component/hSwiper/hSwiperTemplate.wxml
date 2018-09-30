@@ -20,10 +20,10 @@
 </template>
 
 <template name="swiper4">
-  <view class="itemSelf_4 itemOn" data-appid="{{item.WxAppId}}" data-type="{{item.AppType}}" data-idx="{{index}}" wx:if="{{index == selIndex}}">
+  <navigator class="itemSelf_4 itemOn" target='miniProgram' app-id="{{item.WxAppId}}" version="release" data-appid="{{item.WxAppId}}" data-type="{{item.AppType}}" data-gameid="{{item.GameId}}" bindsuccess='game_click' data-idx="{{index}}" wx:if="{{index == selIndex}}">
     	<image src='{{item.Icon}}'></image>
-	</view>
-  <view class="itemSelf_4" data-appid="{{item.WxAppId}}" data-type="{{item.AppType}}" data-idx="{{index}}" wx:if="{{index != selIndex}}">
+	</navigator>
+  <navigator class="itemSelf_4" target='miniProgram' app-id="{{item.WxAppId}}" version="release" data-appid="{{item.WxAppId}}" data-type="{{item.AppType}}" data-gameid="{{item.GameId}}" bindsuccess='game_click' data-idx="{{index}}" wx:if="{{index != selIndex}}">
     	<image src='{{item.Icon}}'></image>
-	</view>
+	</navigator>
 </template>

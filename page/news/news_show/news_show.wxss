@@ -1,0 +1,6 @@
+/* page/news/news_show/news_show.wxss */
+
+.pic{width: 100%;display: block;}
+.title{font-size: 32rpx;line-height: 60rpx;padding: 0 20rpx;margin-top: 20rpx;}
+.con{font-size: 24rpx;color: #666;padding: 0 20rpx;margin-top: 20rpx;}
+

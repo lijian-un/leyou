@@ -1,0 +1,8 @@
+<!--page/my/shangwu/index.wxml-->
+<view class='about_us'>
+  <view class='info'>
+    <view>邮箱：1169963302@qq.com</view>
+    客户经理：15235197295
+  </view>
+  <text class='message'>如有意向合作您可以发送邮件到乐游官方邮箱或者直接致电客户经理咨询</text>
+</view>

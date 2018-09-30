@@ -1,0 +1,6 @@
+<!--page/buy/buy_over/buy_over.wxml-->
+<image src='/image/buy_ok.png' class='ok'></image>
+<view class='info'>
+    恭喜您支付成功<text>当前订单支付完成</text>
+</view>
+<view class='btn' bindtap='goindex'>返回首页</view>

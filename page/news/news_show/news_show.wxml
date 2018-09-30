@@ -1,0 +1,4 @@
+<!--page/news/news_show/news_show.wxml-->
+<image class='pic' src='/image/grzx.png' mode="widthFix"></image>
+<view class='title'>标题</view>
+<view class='con'>内容</view>

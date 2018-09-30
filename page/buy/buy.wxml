@@ -1,0 +1,34 @@
+<!--page/buy/buy.wxml-->
+<view class='box'>
+    <view class='info'>
+        {{address.Receiver}}<text>{{address.Phone}}</text>
+        <image src='/image/site.png' bindtap='siteAddress'></image>
+    </view>
+    <view class='address'>
+        <image src='/image/address.png'></image>{{allCity[address.Province-2].RegionName}}-{{allCity[address.City-2].RegionName}}-{{allCity[address.Area-2].RegionName}}-{{address.Address}}
+    </view>
+</view>
+<view class='shop clear'>
+    <image src='{{shop.Imgs[0].Url}}' wx:if="{{shop.Imgs[0].Url}}"></image>
+    <image src='/image/qian_4.png' wx:else></image>
+    <view class='s_info'>
+        <view class='ellipsis'>{{shop.Title}}</view>
+        <text>数量：{{gm_num}}</text>
+    </view>
+    <view class='btns clear'>
+        <image src='/image/add2.png' style='float:right' bindtap='set_paynum' data-type="2"></image>
+        <view class='nums' style='float:right'>{{gm_num}}</view>
+        <image src='/image/del.png' style='float:right' bindtap='set_paynum' data-type="1"></image>
+    </view>
+</view>
+<view class='message'>
+    <text>兑换成功后，商品将在72小时内发货（除周末节假日）</text>
+    <text>如有问题请致电：400-999-888</text>
+    <text>微信公众号：leyoushouyou</text>
+</view>
+<view style='height:100rpx;'></view>
+
+<view class='foot'>
+    <image src='/image/qian_1.png'></image>{{money}}金币 
+    <view class='foot_btn' bindtap='buy'>立即兑换</view>
+</view>

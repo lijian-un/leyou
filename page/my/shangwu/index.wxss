@@ -1,0 +1,21 @@
+/* page/my/shangwu/index.wxss */
+page{background: #F6F6F6;}
+.about_us{
+  background: #fff;
+  padding: 20rpx;
+  box-sizing: border-box;
+  margin: 30rpx;
+  border-radius: 10rpx;
+}
+.about_us .info{
+  display: block;
+  line-height: 60rpx;
+  padding: 40rpx 0;
+}
+.about_us .info view{
+  display: block;
+}
+.about_us .message{
+  display: block;
+  color: #536FF2
+}

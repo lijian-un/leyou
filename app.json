@@ -1,9 +1,19 @@
 {
   "pages": [
+    
     "page/index/index",
     "page/shop/shop",
+    "page/shop/shop_show/shop_show",
+    "page/buy/buy",
+    "page/buy/buy_over/buy_over",
     "page/news/news",
-    "page/my/my"
+    "page/news/news_show/news_show",
+    "page/my/my",
+    "page/my/address/address",
+    "page/my/fankui/index",
+    "page/my/fankui/fkadd/index",
+    "page/my/shangwu/index"
+    
   ],
   "window": {
     "navigationBarBackgroundColor": "#536FF2",

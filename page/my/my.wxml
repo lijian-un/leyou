@@ -4,49 +4,111 @@
     <view class='top'>
         <image class='avatar' src='{{avatar}}'></image>
         <view class='nickname'>{{nickname}}</view>
-        <view class='money'><image src='../../image/staring.png'></image>48888金币</view>
-        <view class='qiandao'><image src='../../image/qiandao.png'></image>签到</view>
+        <view class='money'><image src='../../image/staring.png'></image>{{money}}金币</view>
+        <view class='qiandao' bindtap='goSign'><image src='../../image/qiandao.png'></image>签到</view>
     </view>
 
     <view class='all'>
-        <view class='n_image'><image src='../../image/richang.png'></image></view>日常任务（1/6）
+        <view class='n_image'><image src='../../image/richang.png'></image></view>日常任务（{{data.totaldone}}/6）
     </view>
-
-    <view class='nav over'>
+    <view class='nav'>
         <view class='n_image'><image src='../../image/qiandao.png'></image></view>
         <view class='n_tit'>每日签到</view>
         <view class='n_con'>10金币</view> 
-        <view class='n_btn'>已领取</view>
+        <view class='n_btn' wx:if='{{data.issignup==0}}' bindtap='goSign'>去完成</view>
+        <view class='over n_btn' wx:if='{{data.issignup==1}}'>已领取</view>
     </view>
-    <view class='nav ok'>
+    <button class='nav' open-type="share">
         <view class='n_image'><image src='../../image/fenxiang.png'></image></view>
         <view class='n_tit'>好友分享</view>
         <view class='n_con'>分享到群可得10金币</view> 
-        <view class='n_btn'>领金币</view>
-    </view>
-    <view class='nav'>
+        <!-- <view class='ok n_btn'>领金币</view> -->
+        <view class='n_btn' wx:if='{{data.issharegroup==0}}'>去完成</view>
+        <view class='over n_btn' wx:if='{{data.issharegroup==1}}'>已领取</view>
+    </button>
+    <button class='nav' open-type="share">
         <view class='n_image'><image src='../../image/zhuanfa.png'></image></view>
         <view class='n_tit'>分享3个不同的群</view>
         <view class='n_con'>50金币</view> 
-        <view class='n_btn'>去完成</view>
-    </view>
-    <view class='nav'>
+        <view class='n_btn' wx:if='{{data.issharethreegroups==0}}'>去完成</view>
+        <view class='over n_btn' wx:if='{{data.issharethreegroups==1}}'>已领取</view>
+    </button>
+    <navigator class='nav' url='../../page/index/index' open-type='switchTab'>
         <view class='n_image'><image src='../../image/game3.png'></image></view>
         <view class='n_tit'>玩3款小游戏</view>
         <view class='n_con'>10金币</view> 
-        <view class='n_btn'>去完成</view>
-    </view>
-    <view class='nav'>
+        <view class='n_btn' wx:if='{{data.isplaythreegames==0}}'>去完成</view>
+        <view class='over n_btn' wx:if='{{data.isplaythreegames==1}}'>已领取</view>
+    </navigator>
+    <navigator class='nav' url='../../page/index/index' open-type='switchTab'>
         <view class='n_image'><image src='../../image/game5.png'></image></view>
         <view class='n_tit'>玩5款小游戏</view>
         <view class='n_con'>10金币</view> 
-        <view class='n_btn'>去完成</view>
-    </view>
-    <view class='nav'>
+        <view class='n_btn' wx:if='{{data.isplayfivegames==0}}'>去完成</view>
+        <view class='over n_btn' wx:if='{{data.isplayfivegames==1}}'>已领取</view>
+    </navigator>
+    <button class='nav' open-type="share">
         <view class='n_image'><image src='../../image/yaoqing.png'></image></view>
         <view class='n_tit'>邀请3个好友</view>
         <view class='n_con'>10金币</view> 
-        <view class='n_btn'>去完成</view>
+        <view class='n_btn' wx:if='{{data.isinvitethreefriends==0}}'>去完成</view>
+        <view class='over n_btn' wx:if='{{data.isinvitethreefriends==1}}'>已领取          </view>
+    </button>
+    <navigator url="games/index" class="navigator" style="margin-top:40rpx;">
+      <view class="navigator-text">最近玩过</view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+    <navigator url="fankui/index" class="navigator">
+      <view class="navigator-text">用户反馈</view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+    <navigator url="shangwu/index" class="navigator">
+      <view class="navigator-text">商务合作</view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+</view>
+<view style='height:150rpx;'></view>
+
+<view class='bg_box' wx:if="{{qd_sta}}">
+    <view class='sign_box' wx:if="{{qd_mess}}">
+        <image src='/image/close.png' class='close' bindtap='goSign'></image>
+        <view class='s_tit'>签到领金币</view>
+        <view class=' clear' style='text-align:center'>
+        <block wx:for="{{qd_day}}">
+            <view class='s_item over' wx:if="{{signData.continueDate>index||((signData.continueDate-1)==index&&signData.todaySign==1)}}">
+                <view class='s_con'>
+                    <view class='s_day'>第{{item}}天</view>
+                    <image src='/image/qian_no1.png'></image>
+                </view>
+                <view class='s_price'>+{{signData.rewardPoint[index]}}金币</view>
+            </view>
+            <view class='s_item today' wx:elif="{{signData.continueDate==index&&signData.todaySign==0}}">
+                <view class='s_con'>
+                    <view class='s_day'>第{{item}}天</view>
+                    <image src='{{qd_img[index]}}'></image>
+                </view>
+                <view class='s_price'>+{{signData.rewardPoint[index]}}金币</view>
+            </view>
+            <view class='s_item' wx:else>
+                <view class='s_con'>
+                    <view class='s_day'>第{{item}}天</view>
+                    <image src='{{qd_img[index]}}'></image>
+                </view>
+                <view class='s_price'>+{{signData.rewardPoint[index]}}金币</view>
+            </view>
+        </block>
+        </view>
+        <view class='sign_btn' wx:if="{{signData.todaySign==0}}" bindtap='set_sign'>领取奖励</view>
+        <view class='sign_btn over' wx:else>已签到</view>
+    </view>
+    <view class='sign_mess' wx:if="{{!qd_mess}}">
+        <view class='s_tit'>签到领金币</view>
+        <image src='/image/close.png' class='close' bindtap='mess_close'></image>
+        <image src='/image/qian_oks.png' class='mess_bg'></image>
+        <view class='mess_info'>
+            <text>+10</text>金币
+            <view class='mess_message'>明日连续签到还可得<text>10</text>金币</view>
+        </view>
     </view>
 </view>
 <dialog id='dialog' 

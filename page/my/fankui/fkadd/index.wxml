@@ -1,0 +1,11 @@
+<view class='message'>
+  <text>{{title}}</text>
+  <textarea bindblur="messageinfo" auto-height placeholder="请填写问题描述以便我们提供更好的帮助" />
+</view>
+<view class='phone'>
+  <text>输入有效联系方式以便开发者联系您（选填）</text>
+  <input  bindinput="phoneinput" placeholder="邮箱/电话"/>
+</view>
+<view class='query_btn'>
+  <button bindtap='query_msg'>提交</button>
+</view>

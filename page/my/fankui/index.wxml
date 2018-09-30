@@ -1,0 +1,39 @@
+<view>
+  <text>请选择反馈内容</text>
+  <navigator url="fkadd/index?id=1" class="navigator">
+      <view class="navigator-text">无法打开小程序</view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+    <navigator url="fkadd/index?id=2" class="navigator">
+      <view class="navigator-text">小程序闪退</view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+    <navigator url="fkadd/index?id=3" class="navigator">
+      <view class="navigator-text">卡顿</view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+    <navigator url="fkadd/index?id=4" class="navigator">
+      <view class="navigator-text">黑屏白屏</view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+    <navigator url="fkadd/index?id=5" class="navigator">
+      <view class="navigator-text">死机</view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+    <navigator url="fkadd/index?id=6" class="navigator">
+      <view class="navigator-text">界面错位</view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+    <navigator url="fkadd/index?id=7" class="navigator">
+      <view class="navigator-text">界面加载慢</view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+    <navigator url="fkadd/index?id=8" class="navigator">
+      <view class="navigator-text">其他异常</view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+    <navigator url="fkadd/index?id=9" class="navigator">
+      <view class="navigator-text">意见与建议</view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+</view>

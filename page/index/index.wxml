@@ -11,7 +11,7 @@
 <!-- 热门游戏 -->
 <view class='hot clear'>
   <block wx:for="{{hot_data}}">
-    <navigator class='hot_item' target='miniProgram' app-id="{{item.WxAppId}}" data-appid="{{item.WxAppId}}" data-type="{{item.AppType}}" bindsuccess='game_click'>
+    <navigator class='hot_item' target='miniProgram' app-id="{{item.WxAppId}}" version="release" data-appid="{{item.WxAppId}}" data-type="{{item.AppType}}" data-gameid="{{item.GameId}}" bindsuccess='game_click'>
         <image src='{{item.Icon}}'></image>{{item.Name}}
     </navigator>
   </block>
@@ -25,17 +25,11 @@
 
 <!-- 精选游戏 -->
 <view class='list'>
-  <navigator class='list_item' target='miniProgram' app-id="wxd4abb0f4db18da79" version="release" data-appid="wxd4abb0f4db18da79" data-type="minigame" bindsuccess='game_click'>
-      <image src='https://resource.leyougame.cc/icon/bwcz.png'></image>
-      <view class='i_tit'>牛仔跑酷</view>
-      <view class='i_message ellipsis-2'>牛仔跑酷，一起畅玩西部跑酷吧！</view>
-      <view class='i_btn'>马上玩</view>
-  </navigator>
   <block wx:for="{{new_data}}">
-    <navigator class='list_item' target='miniProgram' app-id="{{item.WxAppId}}" data-appid="{{item.WxAppId}}" data-type="{{item.AppType}}" bindsuccess='game_click'>
+    <navigator class='list_item' target='miniProgram' app-id="{{item.WxAppId}}" version="release" data-appid="{{item.WxAppId}}" data-type="{{item.AppType}}" data-gameid="{{item.GameId}}" bindsuccess='game_click'>
         <image src='{{item.Icon}}'></image>
         <view class='i_tit'>{{item.Name}}</view>
-        <view class='i_message ellipsis-2'>{{item.Desc}}</view>
+        <view class='i_message ellipsis-1'>{{item.Desc}}</view>
         <view class='i_btn'>马上玩</view>
     </navigator>
   </block>

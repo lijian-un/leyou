@@ -1,0 +1,12 @@
+/* page/my/fankui/fkadd/index.wxss */
+page{background: #F6F6F6;}
+.message{ background: #fff; padding: 0 30rpx}
+.message text{ display: block; height: 80rpx; line-height: 80rpx; border-bottom: 1px #eee solid}
+.message textarea{ display: block;min-height:140rpx; padding: 20rpx 0;}
+
+.phone{ padding: 0}
+.phone text{padding: 0 30rpx; display: block; height: 60rpx; line-height: 60rpx; color: #999}
+.phone input{padding: 30rpx; background: #fff}
+
+.query_btn{ margin-top: 80rpx}
+.query_btn button{ width: 90%; margin: 0 auto; background: #536FF2; color: #fff}

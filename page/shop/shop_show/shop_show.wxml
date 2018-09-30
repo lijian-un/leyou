@@ -1,0 +1,16 @@
+<!--page/shop/shop_show/shop_show.wxml-->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{data.Imgs}}">
+        <swiper-item>
+            <image src="{{item.Url}}" class="slide-image"/>
+        </swiper-item>
+    </block>
+</swiper>
+<view class='tit'>{{data.Title}}</view>
+<view class='mess'>详情</view>
+<view class='con'>{{data.Desc}}</view>
+<view style='height:100rpx;'></view>
+<view class='foot'>
+    <image src='/image/qian_1.png'></image>{{data.Price}}金币
+    <view class='foot_btn' data-id='{{data.id}}' bindtap='buy'>立即兑换</view>
+</view>

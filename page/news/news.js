@@ -1,4 +1,7 @@
 // page/news/news.js
+const newsList = require('../../config').newsList;
+var app = getApp();
+var page = 1;
 Page({
 
   /**
@@ -12,6 +15,31 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
+    that.getdata();
+  },
+  getdata: function () {
+    var that = this;
+    var ids_data = wx.getStorageSync('user_ids');
+    wx.request({
+      url: newsList + '?page=' + page + '&openid=' + ids_data['openId'],
+      success: function (res) {
+        var callback = res.data;
+        console.log(callback)
+        if (callback.data) {
+          that.setData({
+            list: callback.data
+          })
+        }
+      }
+    })
+  },
+  newsShow: function (e) {
+    var dst = e.currentTarget.dataset;
+    // console.log(dst);
+    wx.navigateTo({
+      url: 'news_show/news_show?id=' + dst.id,
+    })
 
   },
 
@@ -61,6 +89,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: '你想玩的游戏这里都有',
+      imageUrl: '/image/zf_img.png',
+      path: '/page/index/index?shareToken=' + app.globalData.token,
+    };
   }
 })

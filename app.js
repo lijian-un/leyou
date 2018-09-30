@@ -2,12 +2,44 @@
 const openIdUrl = require('./config').openIdUrl;
 const logUrl = require('./config').logUrl;
 const updmemUrl = require('./config').updmemUrl;
+const openUrl = require('./config').openUrl;
+const fxUrl = require('./config').fxUrl;
+const moneyUrl = require('./config').moneyUrl;
 var Util = require('./utils/util.js');
-var scene = ''; var code = '';
+var scene = ''; var code = ''; var token = '';
 App({
   onLaunch: function (options) {
     scene = options.scene;
+    if (options.shareToken) {
+      token = options.shareToken;
+      var encryptedData = '';
+      var iv = '';
+      if (options.shareTickets) {
+        wx.getShareInfo({
+          shareTicket: options.shareTickets,
+          success(res) {
+            encryptedData = res.encryptedData;
+            iv = res.iv; // 加密算法的初始向量
+          }
+        });
+      }
+      wx.request({
+        url: openUrl,
+        method: 'POST',
+        header: { "Content-Type": "application/x-www-form-urlencoded" },
+        data: { shareToken: options.shareToken, iv: iv, encryptedData: encryptedData },
+        success: res => {
+          console.log('拉取用户openid失败，将无法正常使用开放接口等服务', res)
+        },
+        fail: res => {
+          console.log('拉取用户openid失败，将无法正常使用开放接口等服务', res)
+        }
+      })
+    }
     this.checkSession();
+  },
+  onShow:function(options){
+    
   },
   //判断是否登录过期获取用户信息
   checkSession: function (do_self, status) {
@@ -18,6 +50,8 @@ App({
         if (!udata || udata == "") {
           that.getUserInfo(do_self, status);
         } else {
+          that.fx_data();
+          that.user_money();
           do_self && do_self(udata)
         }
       },
@@ -36,7 +70,7 @@ App({
           url: openIdUrl,
           method: 'POST',
           header: { "Content-Type": "application/x-www-form-urlencoded" },
-          data: { code: data.code, gameid: 'leyoubox', from_game: 'leyoubox', from_channel: 'leyoubox', sysInfo: sysinfo },
+          data: { code: data.code, gameid: 'leyoubox', from_game: 'leyoubox', from_channel: 'leyoubox', sysInfo: sysinfo, share_token:token },
           success: res => {
             var callback = res.data;
             if (callback.meta.errCode == 0) {
@@ -82,6 +116,8 @@ App({
               data['logType'] = 1;
               data['type'] = 0;
               that.add_log(data);
+              that.fx_data();
+              that.user_money();
               do_self && do_self(callback.data);
             } else {
               console.log('拉取用户注册失败', res)
@@ -118,7 +154,44 @@ App({
       }
     })
   },
+  fx_data:function(){
+    var that = this;
+    var ids_data = wx.getStorageSync('user_ids');
+    wx.request({
+      url: fxUrl,
+      method: 'GET',
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
+      data: { openid: ids_data['openId'] },
+      success: res => {
+        var callback = res.data;
+        that.globalData.token = callback.data;
+      },
+      fail: res => {
+        console.log('拉取用户openid失败，将无法正常使用开放接口等服务', res)
+      }
+    })
+  },
+  user_money: function () {
+    var that = this;
+    var ids_data = wx.getStorageSync('user_ids');
+    wx.request({
+      url: moneyUrl,
+      method: 'GET',
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
+      data: { openid: ids_data['openId'] },
+      success: res => {
+        var callback = res.data;
+        that.globalData.Balance = callback.data.Balance;
+        that.globalData.Point = callback.data.Point;
+      },
+      fail: res => {
+        console.log('拉取用户openid失败，将无法正常使用开放接口等服务', res)
+      }
+    })
+  },
   globalData: {
-    userInfo: null
+    token: null,
+    Balance:0,
+    Point:0
   }
 })
