@@ -1,0 +1,74 @@
+<view class='paihang'>
+  <image src='/image/paihang_bg.jpg' class="bgimg" mode="widthFix"></image>
+</view>
+<view class='paihang_btn'>
+  <view class='btn_1' bindtap='paihang_qh'>
+    <image wx:if='{{paihang_sta!=1}}' src='/image/paihang_wno.png' mode="widthFix"></image>
+    <image wx:if='{{paihang_sta==1}}' src='/image/paihang_wok.png' mode="widthFix"></image>
+  </view>
+  <view class='btn_2' bindtap='paihang_qh'>
+    <image wx:if='{{paihang_sta==1}}' src='/image/paihang_mno.png' mode="widthFix"></image>
+    <image wx:if='{{paihang_sta!=1}}' src='/image/paihang_mok.png' mode="widthFix"></image>
+  </view>
+</view>
+<view class='paihang_my'>
+  <image src='/image/paihang_tbg.png' mode="widthFix"></image>
+  <view class='text' wx:if='{{paihang_sta==1}}'>
+    <view wx:if='{{list.my_weekly}}'>您的当前排名为：<text>{{list.my_weekly}}</text></view>
+    <view wx:if='{{!list.my_weekly}}'>暂无排行</view>
+  </view>
+  <view class='text' wx:if='{{paihang_sta!=1}}'>
+    <view wx:if='{{list.my_monthly}}'>您的当前排名为：<text>{{list.my_monthly}} </text></view>
+    <view wx:if='{{!list.my_monthly}}'>暂无排行</view>
+  </view>
+</view>
+<view class='list' wx:if='{{paihang_sta==1}}'>
+  <view class='list_item'>
+      <view class='i_tit'>排名</view>
+      <view class='i_tit'>名称</view>
+      <view class='i_tit'>成员数</view>
+      <view class='i_tit'>金币</view>
+  </view>
+  <block wx:for="{{list.weekly}}" wx:key="{{index}}">
+    <view class='list_item'>
+        <view class='i_tit' wx:if='{{index==0}}'>
+          <image src='/image/paihang_1.png' mode="widthFix"></image>
+        </view>
+        <view class='i_tit' wx:elif='{{index==1}}'>
+          <image src='/image/paihang_2.png' mode="widthFix"></image>
+        </view>
+        <view class='i_tit' wx:elif='{{index==2}}'>
+          <image src='/image/paihang_3.png' mode="widthFix"></image>
+        </view>
+        <view class='i_tit' wx:else>{{index+1}}</view>
+        <view class='i_tit'>{{item.nickname}}</view>
+        <view class='i_tit yellow'>{{item.members}}</view>
+        <view class='i_tit yellow'>{{item.coins}}</view>
+    </view>
+  </block>
+</view>
+<view class='list' wx:if='{{paihang_sta!=1}}'>
+  <view class='list_item'>
+      <view class='i_tit'>排名</view>
+      <view class='i_tit'>名称</view>
+      <view class='i_tit'>成员数</view>
+      <view class='i_tit'>金币</view>
+  </view>
+  <block wx:for="{{list.monthly}}" wx:key="{{index}}">
+    <view class='list_item'>
+        <view class='i_tit' wx:if='{{index==0}}'>
+          <image src='/image/paihang_1.png' mode="widthFix"></image>
+        </view>
+        <view class='i_tit' wx:elif='{{index==1}}'>
+          <image src='/image/paihang_2.png' mode="widthFix"></image>
+        </view>
+        <view class='i_tit' wx:elif='{{index==2}}'>
+          <image src='/image/paihang_3.png' mode="widthFix"></image>
+        </view>
+        <view class='i_tit' wx:else>{{index+1}}</view>
+        <view class='i_tit'>{{item.nickname}}</view>
+        <view class='i_tit yellow'>{{item.members}}</view>
+        <view class='i_tit yellow'>{{item.coins}}</view>
+    </view>
+  </block>
+</view>

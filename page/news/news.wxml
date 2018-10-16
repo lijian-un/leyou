@@ -1,11 +1,12 @@
 <!-- <image src='/image/news.jpg' style="width:100%;" mode="widthFix"></image> -->
 <view class="list">
     <block wx:for="{{list}}">
-    <view class='item' bindtap='newsShow' data-id='{{item.Id}}'>
-        <image src='../../image/add.png'></image>
+    <view class='item' bindtap='newsShow'  data-id='{{item.Id}}' data-title='{{item.Title}}' data-content='{{item.Content}}'>
+        <image src='{{item.Cover}}' wx:if="{{item.Cover}}"></image>
+        <image src='../../image/add.png' wx:else></image>
         <view class='i_info'>
             <view class='i_tit ellipsis-2'>{{item.Title}}</view>
-            <view class='i_message ellipsis-3'>{{item.Cover}}</view>
+            <view class='i_message ellipsis-3'>{{item.Desc}}</view>
             <view class='i_foot clear'>
                 <text>{{item.Author}}</text>
                <!-- <view class='i_btn'>

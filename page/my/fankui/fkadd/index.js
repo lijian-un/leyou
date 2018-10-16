@@ -54,7 +54,7 @@ Page({
       url: msgUrl,
       method: 'POST',
       header: { "Content-Type": "application/x-www-form-urlencoded" },
-      data: { openid: ids_data['openId'], content: that.data.message, contact: that.data.phone, feed_type: that.data.msg_id },
+      data: { uniqueId: ids_data['uniqueId'], gameId: app.globalData.gameId, content: that.data.message, contact: that.data.phone, feed_type: that.data.msg_id },
       success: res => {
         var callback = res.data;
         if (callback.meta.errCode == 0) {
@@ -116,15 +116,6 @@ Page({
    */
   onReachBottom: function () {
 
-  },
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    return {
-      title: '你想玩的游戏这里都有',
-      imageUrl: '/image/zf_img.png',
-      path: '/page/index/index?shareToken=' + app.globalData.token,
-    };
   }
+  
 })

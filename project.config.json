@@ -36,10 +36,18 @@
 			"current": 0,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "1",
 					"pathName": "page/index/index",
+					"query": "shareToken=11",
 					"scene": "1008"
+				},
+				{
+					"id": 1,
+					"name": "2",
+					"pathName": "page/index/index",
+					"query": "shareToken=leyoubox",
+					"scene": "1011"
 				}
 			]
 		}

@@ -4,12 +4,20 @@
     <view class='top'>
         <image class='avatar' src='{{avatar}}'></image>
         <view class='nickname'>{{nickname}}</view>
-        <view class='money'><image src='../../image/staring.png'></image>{{money}}金币</view>
-        <view class='qiandao' bindtap='goSign'><image src='../../image/qiandao.png'></image>签到</view>
+        <navigator url="money/index" class='money'><image src='../../image/qian_1.png'></image>{{money}}金币</navigator>
+        <view class='money'><image src='../../image/money.png'></image>{{price}}元</view>
+        <view class='i_btn' bindtap='Tixian'>提现</view>
+        <navigator class='qiandao' url="/page/rotate/rotate"><image src='../../image/choujiang.png'></image>抽奖</navigator>
     </view>
-
+    <navigator class='guanggao' url="wanfa/index">
+      <view class='guanggao_data'>
+        <image class='jb' src='/image/qian_1.png' mode="widthFix"></image>
+        <view class='title'>赚金币，金币兑好礼!</view>
+        <view class='btns'>赚金币<image src='/image/guanggao_right.png' mode="widthFix"></image></view>
+      </view>
+    </navigator>
     <view class='all'>
-        <view class='n_image'><image src='../../image/richang.png'></image></view>日常任务（{{data.totaldone}}/6）
+        <view class='n_image'><image src='../../image/richang.png'></image></view>红包任务（{{data.totaldone}}/6）
     </view>
     <view class='nav'>
         <view class='n_image'><image src='../../image/qiandao.png'></image></view>
@@ -18,7 +26,7 @@
         <view class='n_btn' wx:if='{{data.issignup==0}}' bindtap='goSign'>去完成</view>
         <view class='over n_btn' wx:if='{{data.issignup==1}}'>已领取</view>
     </view>
-    <button class='nav' open-type="share">
+    <button class='nav' open-type="share" data-img="/image/share_1.jpg" data-text="乐游疯狂游戏盒子，一个玩游戏还能赚钱的盒子">
         <view class='n_image'><image src='../../image/fenxiang.png'></image></view>
         <view class='n_tit'>好友分享</view>
         <view class='n_con'>分享到群可得10金币</view> 
@@ -26,36 +34,45 @@
         <view class='n_btn' wx:if='{{data.issharegroup==0}}'>去完成</view>
         <view class='over n_btn' wx:if='{{data.issharegroup==1}}'>已领取</view>
     </button>
-    <button class='nav' open-type="share">
+    <button class='nav' open-type="share" data-img="/image/share_2.jpg" data-text="您已经有57个好友在这领取红包了">
         <view class='n_image'><image src='../../image/zhuanfa.png'></image></view>
         <view class='n_tit'>分享3个不同的群</view>
-        <view class='n_con'>50金币</view> 
-        <view class='n_btn' wx:if='{{data.issharethreegroups==0}}'>去完成</view>
+        <view class='n_con'>10金币</view> 
+        <view class='n_btn' wx:if='{{data.issharethreegroups==0}}'>{{data.sharegroupnum}}/3</view>
         <view class='over n_btn' wx:if='{{data.issharethreegroups==1}}'>已领取</view>
     </button>
     <navigator class='nav' url='../../page/index/index' open-type='switchTab'>
         <view class='n_image'><image src='../../image/game3.png'></image></view>
         <view class='n_tit'>玩3款小游戏</view>
         <view class='n_con'>10金币</view> 
-        <view class='n_btn' wx:if='{{data.isplaythreegames==0}}'>去完成</view>
+        <view class='n_btn' wx:if='{{data.isplaythreegames==0}}'>{{data.playgamesnum}}/3</view>
         <view class='over n_btn' wx:if='{{data.isplaythreegames==1}}'>已领取</view>
     </navigator>
     <navigator class='nav' url='../../page/index/index' open-type='switchTab'>
         <view class='n_image'><image src='../../image/game5.png'></image></view>
         <view class='n_tit'>玩5款小游戏</view>
         <view class='n_con'>10金币</view> 
-        <view class='n_btn' wx:if='{{data.isplayfivegames==0}}'>去完成</view>
+        <view class='n_btn' wx:if='{{data.isplayfivegames==0}}'>{{data.playgamesnum}}/5</view>
         <view class='over n_btn' wx:if='{{data.isplayfivegames==1}}'>已领取</view>
     </navigator>
-    <button class='nav' open-type="share">
+    <button class='nav' open-type="share" data-img="/image/share_3.jpg" data-text="什么？玩游戏还能赚钱">
         <view class='n_image'><image src='../../image/yaoqing.png'></image></view>
         <view class='n_tit'>邀请3个好友</view>
         <view class='n_con'>10金币</view> 
-        <view class='n_btn' wx:if='{{data.isinvitethreefriends==0}}'>去完成</view>
+        <view class='n_btn' wx:if='{{data.isinvitethreefriends==0}}'>{{data.invitefriendsnum}}/3</view>
         <view class='over n_btn' wx:if='{{data.isinvitethreefriends==1}}'>已领取          </view>
     </button>
-    <navigator url="games/index" class="navigator" style="margin-top:40rpx;">
+    <navigator url="team/index" class="navigator" style="margin-top:40rpx;">
+      <view class="navigator-text"><image src='../../image/myteam.png' mode="widthFix"></image>我的团队</view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+    <navigator url="paihang/index" class="navigator">
+      <view class="navigator-text"><image src='../../image/mypaihang.png' mode="widthFix"></image>排行榜</view>
+      <view class="navigator-arrow"></view>
+    </navigator>
+    <navigator url="games/index" class="navigator">
       <view class="navigator-text">最近玩过</view>
+      <view class='game_img'></view>
       <view class="navigator-arrow"></view>
     </navigator>
     <navigator url="fankui/index" class="navigator">
@@ -106,8 +123,8 @@
         <image src='/image/close.png' class='close' bindtap='mess_close'></image>
         <image src='/image/qian_oks.png' class='mess_bg'></image>
         <view class='mess_info'>
-            <text>+10</text>金币
-            <view class='mess_message'>明日连续签到还可得<text>10</text>金币</view>
+            <text>+{{point}}</text>金币
+            <view class='mess_message'>明日连续签到还可得<text>{{nextPoint}}</text>金币</view>
         </view>
     </view>
 </view>
@@ -118,3 +135,39 @@
       bind:confirmEvent='confirmEvent'
       bind:bindGetUserInfo='bindGetUserInfo'>
 </dialog>
+<view class='tx_modal' wx:if="{{rw_sta==1}}">
+  <view class='tx_data'>
+    <view class='title'>任务奖励
+      <view class='image' bindtap='close_rw'>
+        <image src='/image/tx_close.png'></image>
+      </view>
+    </view>
+    <view class='message'>
+      <view class='msg_titles'>恭喜您，做任务获得<text>{{rwmoney}}金币</text></view>
+      <view class='msg_items'>
+        {{rw_message}}
+      </view>
+      <view class='copy_text' bindtap='close_rw'>赚金币</view>
+    </view>
+  </view>
+</view>
+<view class='tx_modal' wx:if="{{tx_sta==1}}">
+  <view class='tx_data'>
+    <view class='title'>提现流程
+      <view class='image' bindtap='close_tx'>
+        <image src='/image/tx_close.png'></image>
+      </view>
+    </view>
+    <view class='message'>
+      <view class='msg_item'>
+        <text class='msg_tit'>第一步：</text>
+        <view class='msg_content'>微信搜索公众号“<text>乐游疯狂游戏</text>”并关注公众号</view>
+      </view>
+      <view class='msg_item'>
+        <text class='msg_tit'>第二步：</text>
+        <view class='msg_content'>关注成功后回复“红包”进行提现</view>
+      </view>
+      <view class='copy_text' bindtap='copy_tx'>复制公众号</view>
+    </view>
+  </view>
+</view>

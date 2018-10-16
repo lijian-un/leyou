@@ -1,5 +1,4 @@
 /**app.wxss**/
-@import "weui/weui.wxss";
 page{background-color:#fff;font-size:28rpx;}
 
 .clear:after {content:""; display:block; height:0; clear:both; visibility:hidden;}

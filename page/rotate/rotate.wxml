@@ -1,0 +1,63 @@
+<import src="utils/dial.wxml" />
+<image src='utils/images/bg.jpg' class='bg_img' mode="widthFix"></image>
+
+<view class="index">
+    <!-- <view class='index_top'>
+        恭喜花样年华成功抽中 <text>20金币</text>
+    </view> -->
+    <image class='index_logo' src='utils/images/logo.png' mode="widthFix"></image>
+
+    <template is="dial" data="{{...dial}}"></template>
+
+    <view class='index_btns flex'>
+        <view class='btn_box felx1'>
+            红包：{{price}}元
+            <image src='utils/images/add_hot.png' bindtap='tixianClick'></image>
+        </view>
+        <navigator class='btn_box flex1' url="/page/my/wanfa/index">
+            金币：{{money}}金币
+            <image src='utils/images/add_money.png'></image>
+        </navigator>
+    </view>
+
+    <view class="index-tip">
+        <view class='tit'>活动规则</view>
+        <view class='con'>1.活动长期有效,活动j结束时间以公众号通知为准</view>
+        <view class='con'>2.每200金币抽奖一次.每日次数不限</view>
+        <view class='con'>3.红包奖励直接发放到账户余额,可关注公众号"<text>乐游疯狂游戏</text>"提现</view>
+        <view class='con'>4.实物奖励请联系公众号客服登记中奖信息。核实信息后奖品将于7个工作日内发放</view>
+    </view>
+    <view class='tx_modal' wx:if="{{sta_tixian==1}}">
+      <view class='tx_data'>
+        <view class='title'>提现流程
+          <view class='image' bindtap='tixianClick'>
+            <image src='/image/tx_close.png'></image>
+          </view>
+        </view>
+        <view class='message'>
+          <view class='msg_item'>
+            <text class='msg_tit'>第一步：</text>
+            <view class='msg_content'>微信搜索公众号“<text>乐游疯狂游戏</text>”并关注公众号</view>
+          </view>
+          <view class='msg_item'>
+            <text class='msg_tit'>第二步：</text>
+            <view class='msg_content'>关注成功后回复“红包”进行提现</view>
+          </view>
+          <view class='copy_text' bindtap='fuzhi'>复制公众号</view>
+        </view>
+      </view>
+    </view>
+    <view class='tx_modal' wx:if="{{sta_choujiang==1}}">
+      <view class='tx_data'>
+        <view class='title'>{{cjTitle}}
+          <view class='image' bindtap='cjClick'>
+            <image src='/image/tx_close.png'></image>
+          </view>
+        </view>
+        <view class='message'>
+          <image class='cj_img' src='{{cjImg}}'></image>
+          <view class='copy_text' bindtap='cjClick'>确定</view>
+        </view>
+      </view>
+    </view>
+</view>

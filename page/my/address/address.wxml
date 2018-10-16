@@ -3,11 +3,11 @@
 <view class='box'>
     <view class='border-bottom item flex'>
         <view class='tit'>收件人</view>
-        <input class='flex1' bindblur='set_info' data-name='name' placeholder='请输入姓名'></input>
+        <input class='flex1' bindinput='set_info' data-name='name' placeholder='请输入姓名'></input>
     </view>
     <view class='item flex'>
         <view class='tit'>手机号</view>
-        <input class='flex1' bindblur='set_info' data-name='tel' type='tel' placeholder='请输入手联系电话'></input>
+        <input class='flex1' bindinput='set_info' data-name='tel' type='tel' placeholder='请输入手联系电话'></input>
     </view>
 </view>
 
@@ -31,7 +31,7 @@
         </picker>
     </view>
     <view class='item flex'>
-        <textarea placeholder='详细地址' bindblur='set_info' data-name='address'></textarea>
+        <textarea placeholder='详细地址' bindinput='set_info' data-name='address'></textarea>
     </view>
 </view>
 

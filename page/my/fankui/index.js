@@ -56,16 +56,5 @@ Page({
    */
   onReachBottom: function () {
 
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    return {
-      title: '你想玩的游戏这里都有',
-      imageUrl: '/image/zf_img.png',
-      path: '/page/index/index?shareToken=' + app.globalData.token,
-    };
   }
 })

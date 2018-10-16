@@ -1,0 +1,44 @@
+<view class='wanfa'>
+  <image src='/image/jinbi_1.jpg' class="bgimg" mode="widthFix"></image>
+  <navigator url="/page/rotate/rotate">
+    <image class='btn_1' src='/image/jinbi_3.png' mode="widthFix"></image>
+  </navigator>
+</view>
+<view class='wanfa'>
+  <image src='/image/jinbi_2.jpg' mode="widthFix"></image>
+  <navigator url='/page/shop/shop' open-type='switchTab'>
+    <image class='btn_2' src='/image/jinbi_4.png' mode="widthFix"></image>
+  </navigator>
+</view>
+<view class='wanfa'>
+  <image src='/image/jinbi_5.jpg' mode="widthFix"></image>
+  <navigator url='/page/index/index' open-type='switchTab'>
+    <image class='btn_3' src='/image/jinbi_6.png' mode="widthFix"></image>
+  </navigator>
+  <navigator url='/page/my/my' open-type='switchTab'>
+    <image class='btn_4' src='/image/jinbi_7.png' mode="widthFix"></image>
+  </navigator>
+</view>
+<!-- <view class='wanfa'>
+  <image src='/image/jinbi_71.jpg' mode="widthFix"></image>
+  
+</view> -->
+<view class='wanfa'>
+  <image src='/image/jinbi_81.jpg' mode="widthFix"></image>
+   <!-- open-type='switchTab' -->
+  <button class='nav' open-type="share" data-img="/image/share_2.jpg" data-text="您已经有57个好友在这领取红包了">
+    <image class='btn_5' src='/image/jinbi_8.png' mode="widthFix"></image>
+  </button>
+</view>
+<!-- <view class='dazhao'>
+  <image src='/image/jinbi_5.png' mode="widthFix"></image>
+  <navigator url='/page/index/index' open-type='switchTab'>
+    <image class='btn_3' src='/image/jinbi_6.png' mode="widthFix"></image>
+  </navigator>
+  <navigator url='/page/my/my' open-type='switchTab'>
+    <image class='btn_4' src='/image/jinbi_7.png' mode="widthFix"></image>
+  </navigator>
+  <navigator url='/page/my/my' open-type='switchTab'>
+    <image class='btn_5' src='/image/jinbi_8.png' mode="widthFix"></image>
+  </navigator>
+</view> -->

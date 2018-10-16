@@ -1,0 +1,15 @@
+/* page/my/money/index.wxss */
+page{ background-color: #f4f4f4}
+.tab_qh{position: fixed; top: 0; left: 0; right: 0; height: 90rpx; background: #fff; border-bottom: 10rpx #eee solid}
+.tab_item{ width: 50%; float: left; text-align: center;height: 90rpx; line-height: 90rpx; box-sizing: border-box; font-size: 32rpx; position: relative}
+.tab_item:first-child{ border-right: 2rpx #eee solid;}
+.tab_item.ok{ font-weight: 900;}
+.tab_item.ok:after{display: block;content: "";position: absolute;left: 42.5%;bottom: 0;height: 6rpx; width: 15%; background: #5e51f5}
+
+
+.list{padding: 0 30rpx;background-color: #fff; margin-top: 100rpx;}
+.list .list_item{ background-color: #fff; padding: 30rpx 0; border-bottom: 1px #eee solid}
+.list_item .i_tit{ font-weight: 900; font-size: 32rpx;}
+.list_item .i_tit text{ font-weight: 100; color: #999; font-size: 24rpx; display: block; margin-top: 10rpx;}
+.list_item .i_money{color:#fbb61f; float: right; margin-top: -100rpx;font-size: 32rpx;}
+.list_item .i_money text{ font-size: 48rpx;}

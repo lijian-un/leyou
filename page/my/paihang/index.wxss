@@ -1,0 +1,18 @@
+/* page/my/paihang/index.wxss */
+page{ background: #6678da}
+.paihang image{width: 100%;}
+.paihang_btn{ overflow: hidden;z-index: 300;}
+.paihang_btn .btn_1{width: 30%; margin-left: 15%; float: left}
+.paihang_btn .btn_2{width: 30%; margin-left: 10%; float: left}
+.paihang_btn .btn_1 image,.paihang_btn .btn_2 image{ width: 100%;}
+
+.paihang_my{ margin-top: -48rpx;}
+.paihang_my image{width: 100%;position:relative;z-index:-1;}
+.paihang_my .text{ display: block; margin-top: -116rpx; text-align: center; font-size: 36rpx;}
+.paihang_my .text text{ color: #fbd435}
+
+.list{ background: #fff; width: 87%; margin: 0 auto; padding: 40rpx; box-sizing: border-box; position: relative;z-index: -2}
+.list_item{ border-bottom: 1px #eee solid; padding: 20rpx 0; overflow: hidden}
+.list_item .i_tit{ width: 25%; float: left; text-align: center; height: 60rpx; line-height: 60rpx;}
+.list_item .i_tit.yellow{color: #fbd435}
+.list_item .i_tit image{ width: 40rpx;}

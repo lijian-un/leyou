@@ -4,7 +4,7 @@
 var host = "https://box-dev.leyougame.cc";//域名
 var config = {
     // 下面的地址配合云端 Server 工作
-    host,
+  host, 
     // 用code换取openId
     openIdUrl: `${host}/api/v1/common/user/code`,
     // 更新用户信息 
@@ -30,6 +30,8 @@ var config = {
     setSign: `${host}/api/v1/task/sign_up`,
     //资讯列表
     newsList: `${host}/api/v1/news/list`,
+    //资讯详情
+    newsShow: `${host}/api/v1/news/detail`,
     //商城列表
     shopList: `${host}/api/v1/goods/list`,
     //商品详情
@@ -42,6 +44,22 @@ var config = {
     setAddress: `${host}/api/v1/address/update`,
     //获取省份 城市 地区 信息
     region: `${host}/api/v1/region/list`,
+    //已玩列表
+    gameList: `${host}/api/v1/task/footprint`,
+    //团队列表
+    teamList: `${host}/api/v1/group/list`,
+    //获取收益排行榜
+    paihangList: `${host}/api/v1/common/ranking_list`,
+    //金币记录
+    moneyList: `${host}/api/v1/common/conins_log`,
+    //scene换channel
+    getchannel: `${host}/api/v1/common/exchange_scene`,
+    //获取奖品列表
+    getAward: `${host}/api/v1/award/get`,
+    //获取奖品列表
+    setAward: `${host}/api/v1/award/lottery`,
+    //获取弹窗信息
+    tankUrl: `${host}/api/v1/common/alert_info`,
 };
 
-module.exports = config
+module.exports = config;

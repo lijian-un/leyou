@@ -4,7 +4,7 @@ const getAddress = require('../../config').getAddress;
 const region = require('../../config').region;
 const buy = require('../../config').buy;
 var id = null;
-
+var app = getApp();
 Page({
     data: {
         gm_num: 1,
@@ -39,7 +39,7 @@ Page({
                 if (callback.data) {
                     that.setData({
                         shop: callback.data,
-                        money: callback.data.Price
+                        money: callback.data.price
                     })
                 }
             }
@@ -49,7 +49,8 @@ Page({
         var that = this;
         var ids_data = wx.getStorageSync('user_ids');
         wx.request({
-            url: getAddress + '?openid=' + ids_data['openId'],
+            url: getAddress,
+			data: { uniqueId: ids_data['uniqueId'], gameId: app.globalData.gameId },
             success: function (res) {
                 var callback = res.data;
                 // console.log(callback)
@@ -119,7 +120,8 @@ Page({
                             "Content-Type": "application/x-www-form-urlencoded"
                         },
                         data: {
-                            openid: ids_data['openId'],
+							uniqueId: ids_data['uniqueId'], 
+							gameId: app.globalData.gameId,
                             goods_id: id,
                             goods_num: that.data.gm_num
                         },

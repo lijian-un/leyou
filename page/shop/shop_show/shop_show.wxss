@@ -7,9 +7,18 @@ swiper-item image{display: block;width: 100%;height: 100%;}
 
 .tit{width: 100%;height: 120rpx;line-height: 120rpx;box-sizing: border-box;padding: 0 20rpx;font-size: 32rpx;background: #fff}
 .mess{width: 100%;height: 90rpx;line-height: 90rpx;box-sizing: border-box;padding: 0 20rpx;font-size:26rpx;background: #fff;margin-top: 10rpx;}
-.con{background: #fff;box-sizing: border-box;padding: 20rpx;}
+.con{background: #fff;box-sizing: border-box;}
+.con image{ display: block; width: 100%}
 .foot{background: #fff;width: 100%;height: 100rpx;line-height: 100rpx;box-sizing: border-box;padding-left: 30rpx;font-size: 28rpx;color: #FBBA22;position: fixed;left: 0;bottom: 0;z-index: 99;}
 .foot image{width: 40rpx;height:40rpx;margin-right: 10rpx;vertical-align: middle;}
 .foot .foot_btn{position: absolute;right: 0;top: 0;height: 100rpx;line-height: 100rpx;width: 280rpx;text-align: center;font-size: 28rpx;color: #fff;background: #FBBA22}
 
 
+.tx_modal{ position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, .3);z-index: 300}
+.tx_modal .tx_data{ width: 75%; margin: 20% auto; border-radius: 20rpx; position: relative}
+.tx_modal .tx_data .bgimg{ width: 100%; display: block}
+.tx_modal .tx_data .closed{ position: absolute; display: block; width: 30rpx; height: 30rpx; right: 30rpx;top:30rpx;}
+.tx_modal .tx_data .message{position: absolute;top:400rpx; left: 0; right: 0; padding: 30rpx 40rpx;}
+.tx_modal .message .msg_title{ text-align: center; display: block; font-size: 36rpx; color: #fff}
+.tx_modal .message .msg_item{ margin-bottom: 20rpx; overflow: hidden; font-size: 24rpx; padding: 10rpx 0; text-align: center; color: #ffd825 }
+.tx_modal .copy_text{ width: 60%; margin: 0 auto; text-align: center; height: 70rpx; line-height: 70rpx; color: #ca4c01; background: #ffd825; border-radius: 10rpx; box-shadow: 2px 2px 2px #ca4c01;}

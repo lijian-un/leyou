@@ -11,12 +11,12 @@
     <block wx:for="{{list}}">
     <view class='item clear' bindtap='shopShow' data-id='{{item.Id}}'>
         <view class='pic'>
-            <image src='{{item.Imgs}}' wx:if="{{item.Imgs}}"></image>
+            <image src='{{item.Cover}}' wx:if="{{item.Cover}}"></image>
             <image src='../../image/add.png' wx:else></image>
         </view>
         <view class='info'>
             <view class='i_tit ellipsis'>{{item.Title}}</view>
-            <view class='i_mess ellipsis'>{{item.Cover}}</view>
+            <view class='i_mess ellipsis'>{{item.Desc}}</view>
             <view class='i_price'>
                 <image src='../../image/qian_1.png'></image>{{item.Price}}金币
                 <view class='i_num'>剩余 <text>{{item.Num}}</text></view>

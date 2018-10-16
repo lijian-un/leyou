@@ -12,8 +12,15 @@
     "page/my/address/address",
     "page/my/fankui/index",
     "page/my/fankui/fkadd/index",
-    "page/my/shangwu/index"
-    
+    "page/my/shangwu/index",
+    "page/my/games/index",
+    "page/my/team/index",
+    "page/my/paihang/index",
+    "page/my/money/index",
+    "page/rotate/rotate",
+    "page/my/wanfa/index",    
+    "page/my/wanfa/yaoqing/index"
+
   ],
   "window": {
     "navigationBarBackgroundColor": "#536FF2",

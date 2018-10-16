@@ -1,0 +1,10 @@
+<!-- 精选游戏 -->
+<view class='list'>
+  <block wx:for="{{list}}">
+    <navigator class='list_item' target='miniProgram' app-id="{{item.WxAppId}}" version="release" data-appid="{{item.WxAppId}}" data-type="{{item.AppType}}" data-gameid="{{item.GameId}}" bindsuccess='game_click'>
+        <image src='{{item.Icon}}'></image>
+        <view class='i_tit'>{{item.Name}}</view>
+        <view class='i_message ellipsis-1'>{{item.Desc}}</view>
+    </navigator>
+  </block>
+</view>

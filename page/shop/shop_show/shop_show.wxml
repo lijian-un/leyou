@@ -1,16 +1,33 @@
 <!--page/shop/shop_show/shop_show.wxml-->
+<!-- <web-view src="{{url}}" bindmessage="bindmsg"></web-view> -->
 <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-    <block wx:for="{{data.Imgs}}">
+    <block wx:for="{{data.imgs}}">
         <swiper-item>
             <image src="{{item.Url}}" class="slide-image"/>
         </swiper-item>
     </block>
 </swiper>
-<view class='tit'>{{data.Title}}</view>
+<view class='tit'>{{data.title}}</view>
 <view class='mess'>详情</view>
-<view class='con'>{{data.Desc}}</view>
-<view style='height:100rpx;'></view>
+<view class='con'>
+  <block wx:for="{{data.pictures}}">
+    <image src="{{item.url}}" mode="widthFix" />
+  </block>
+</view>
+<view style='height:120rpx;'></view>
 <view class='foot'>
-    <image src='/image/qian_1.png'></image>{{data.Price}}金币
+    <image src='/image/qian_1.png'></image>{{data.price}}金币
     <view class='foot_btn' data-id='{{data.id}}' bindtap='buy'>立即兑换</view>
+</view>
+
+<view class='tx_modal' wx:if="{{hb_dialog==1}}">
+  <view class='tx_data'>
+    <image class='closed' src='/image/hb_close.png' bindtap='close_tx'></image>
+    <image class='bgimg' mode="widthFix" src='/image/hongbao.png'></image>
+    <view class='message'>
+      <text class='msg_title'>恭喜您成功兑换{{data.title}}!</text>
+      <view class='msg_item'>消耗{{data.price}}金币</view>
+      <navigator url="/page/my/money/index" class='copy_text' >立即查看</navigator>
+    </view>
+  </view>
 </view>

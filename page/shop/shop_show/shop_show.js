@@ -1,7 +1,7 @@
 // page/shop/shop_show/shop_show.js
 const shopShow = require('../../../config').shopShow;
 const getAddress = require('../../../config').getAddress;
-
+const buy = require('../../../config').buy;
 var app = getApp();
 var id = '';
 Page({
@@ -15,17 +15,26 @@ Page({
         indicatorDots: true,
         autoplay: false,
         interval: 5000,
-        duration: 1000
+        duration: 1000,
+        hb_dialog:0
     },
-
     onLoad: function (options) {
-        var that = this;
-        id = options.id;
-        that.getdata();
+      var that = this;
+      id = options.id;
+      //id=1;
+      that.getdata();
+      // that.setData({
+      //   url: shopShow + '?id=' + id
+      // })
 
     },
     onShow: function () {
 
+    },
+    close_tx: function () {
+      this.setData({
+        hb_dialog: 0
+      })
     },
     getdata: function(){
         var that = this;
@@ -33,7 +42,6 @@ Page({
             url: shopShow + '?id=' + id,
             success: function (res) {
                 var callback = res.data;
-                // console.log(callback)
                 if (callback.data) {
                     that.setData({
                         data: callback.data
@@ -43,11 +51,34 @@ Page({
         })
     },
     buy:function(e){
-        var that = this;
-        var ids_data = wx.getStorageSync('user_ids');
-        var dst = e.currentTarget.dataset;
+      var that = this;
+      var ids_data = wx.getStorageSync('user_ids');
+      var dst = e.currentTarget.dataset;
+      if(that.data.data.type==2){
         wx.request({
-            url: getAddress + '?openid=' + ids_data['openId'],
+          url: buy,
+          method: 'POST',
+          header: {"Content-Type": "application/x-www-form-urlencoded"},
+          data: {uniqueId: ids_data['uniqueId'],gameId: app.globalData.gameId,goods_id: id,goods_num: 1},
+          success: function (res) {
+            var callback = res.data;
+            if (callback.meta.errCode == 0) {
+              that.setData({
+                hb_dialog: 1
+              })
+            } else {
+              wx.showToast({
+                title: callback.meta.errMsg,
+                image: '/image/error.png',
+                duration: 1500
+              })
+            }
+          }
+        })
+      }else{
+        wx.request({
+            url: getAddress,
+            data: {uniqueId: ids_data['uniqueId'], gameId: app.globalData.gameId},
             success: function (res) {
                 var callback = res.data;
                 console.log(callback)
@@ -75,5 +106,6 @@ Page({
                 }
             }
         })
+      }
     }
 })

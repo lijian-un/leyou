@@ -1,7 +1,7 @@
 // page/my/address/address.js
 const setAddress = require('../../../config').setAddress;
 const region = require('../../../config').region
-
+var app = getApp();
 var allCity = null;
 
 Page({
@@ -168,7 +168,8 @@ Page({
                 "Content-Type": "application/x-www-form-urlencoded"
             },
             data: {
-                openid: ids_data['openId'],
+                uniqueId: ids_data['uniqueId'],
+                gameId: app.globalData.gameId,
                 receiver: info.name,
                 phone: info.tel,
                 province: province,
@@ -182,7 +183,6 @@ Page({
                 if (callback.data) {
                     wx.showToast({
                         title: '设置成功',
-                        image: '/image/error.png',
                         duration: 1500
                     })
                     setTimeout(function(){

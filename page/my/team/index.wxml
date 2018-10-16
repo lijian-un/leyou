@@ -1,0 +1,34 @@
+<view class="title">
+  <view class='total_num'>我的成员数（{{total_members}}）</view>
+  <view class='today_num'>今日新增{{today_members}}</view>
+</view>
+<view class='user_list'>
+    <block wx:for="{{list}}">
+    <view class='item clear'>
+        <view class='pic'>
+            <image src='{{item.head_img_url}}'></image>
+        </view>
+        <view class='info'>
+            <view class='i_tit ellipsis'>{{item.nick_name}}</view>
+            <view class='i_mess ellipsis'>{{item.created_at}}</view>
+            <view class='i_price'>+ <text>10</text>金币</view>
+        </view>
+    </view>
+    </block>
+</view>
+<view class='tx_modal' wx:if="{{lixiantj==1}}">
+  <view class='tx_data'>
+    <view class='tx_title'>温馨提示
+      <view class='image' bindtap='close_tj'>
+        <image src='/image/tx_close.png'></image>
+      </view>
+    </view>
+    <view class='message'>  
+      <text class='msg_titles'>您还没有队员!</text>
+      <view class='msg_items'>
+        邀请队友可以帮您赚取金币
+      </view>
+      <navigator url="/page/my/wanfa/index" class='copy_text' >去邀请</navigator>
+    </view>
+  </view>
+</view>

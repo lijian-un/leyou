@@ -1,0 +1,13 @@
+<view class='tab_qh'>
+  <view class='tab_item {{shouyi}}' bindtap='money_qh'>获取记录</view>
+  <view class='tab_item {{zhichu}}' bindtap='money_qh'>使用记录</view>
+</view>
+<view class='list'>
+  <block wx:for="{{list}}">
+    <view class='list_item'>
+        <view class='i_tit'>{{item.desc}}<text>{{item.datetime}}</text></view>
+        <view class='i_money' wx:if='{{money_sta==1}}'>+<text>{{item.coins}}</text>金币</view>
+         <view class='i_money' wx:if='{{money_sta!=1}}'>-<text>{{item.coins}}</text>金币</view>
+    </view>
+  </block>
+</view>

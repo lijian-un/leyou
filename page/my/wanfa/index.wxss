@@ -1,0 +1,10 @@
+/* page/my/wanfa/index.wxss */
+.wanfa,.dazhao{ position: relative;}
+.wanfa image,.dazhao image{ display: block; width: 100%;}
+.wanfa .btn_1{ position: absolute; top: 960rpx; width: 36%; left: 33%; }
+.wanfa .btn_2{ position: absolute; top: 370rpx; width: 36%; left: 33%; }
+.wanfa .btn_3{ position: absolute; top: 395rpx; width: 36%; left: 33%; }
+.wanfa .btn_4{ position: absolute; top: 895rpx; width: 36%; left: 33%; }
+/* .wanfa .btn_5{ position: absolute; top: 350rpx; width: 36%; left: 33%; } */
+.wanfa button{position: absolute; top: 570rpx; width: 36%; left: 33%; height: 100rpx; background: #fff; padding: 0; margin: 0;}
+.wanfa button image{ width: 100%;}

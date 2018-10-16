@@ -9,10 +9,10 @@
     </view>
 </view>
 <view class='shop clear'>
-    <image src='{{shop.Imgs[0].Url}}' wx:if="{{shop.Imgs[0].Url}}"></image>
-    <image src='/image/qian_4.png' wx:else></image>
+    <image src='{{shop.cover}}' wx:if="{{shop.cover}}"></image>
+    <image src='/image/add.png' wx:else></image>
     <view class='s_info'>
-        <view class='ellipsis'>{{shop.Title}}</view>
+        <view class='ellipsis'>{{shop.title}}</view>
         <text>数量：{{gm_num}}</text>
     </view>
     <view class='btns clear'>

@@ -31,18 +31,57 @@
 swiper{height:350rpx;}
 swiper image{height:350rpx;width:100%;}
 
-.title{line-height: 90rpx;box-sizing: border-box;padding: 0 100rpx;position: relative;font-size: 36rpx;}
-.title image{width: 50rpx;height: 50rpx;display: block;position: absolute;left: 35rpx;top: 20rpx;}
+.title{line-height: 120rpx;box-sizing: border-box;padding: 0 100rpx;position: relative;font-size: 36rpx; height: 120rpx;}
+.title image{width: 50rpx;height: 50rpx;display: block;position: absolute;left: 35rpx;top: 35rpx;}
 
 .hot{box-sizing: border-box;}
-.hot .hot_item{width: 25%;float: left;box-sizing: border-box;padding: 25rpx 5rpx;font-size: 20rpx;text-align: center;}
-.hot .hot_item image{display: block;width: 120rpx;height: 120rpx;margin: 0 auto 15rpx;border-radius: 15rpx;overflow: hidden;}
+.hot .hot_item{width: 25%;float: left;box-sizing: border-box;padding: 25rpx 5rpx;font-size: 28rpx;text-align: center; color: #333}
+.hot .hot_item image{display: block;width: 135rpx;height: 135rpx;margin: 0 auto 15rpx;border-radius: 20rpx;overflow: hidden;}
 
-.list_item{box-sizing: border-box;position: relative;width: 100%;height: 160rpx;padding: 30rpx 150rpx 30rpx 170rpx;}
-.list_item image{display: block;width: 100rpx;height: 100rpx;position: absolute;left: 30rpx;top: 30rpx;border-radius: 10rpx;overflow: hidden;}
-.list_item .i_tit{font-size: 24rpx;color: #000; margin-top:15rpx;}
-.list_item .i_message{font-size: 20rpx;color: #666;}
-.list_item .i_btn{width: 100rpx;height: 44rpx;line-height: 40rpx;border-radius: 20rpx;text-align: center;font-size: 20rpx;color: #fff;position: absolute;right: 30rpx;top: 58rpx;background: -webkit-linear-gradient(left, #3daded , #5e51f5);  background: -o-linear-gradient(right, #3daded , #5e51f5); background: -moz-linear-gradient(right, #3daded , #5e51f5);background: linear-gradient(to right, #3daded , #5e51f5);}
+.list_item{box-sizing: border-box;position: relative;width: 100%;height: 180rpx;padding: 30rpx 150rpx 30rpx 170rpx;}
+.list_item image{display: block;width: 120rpx;height: 120rpx;position: absolute;left: 30rpx;top: 30rpx;border-radius: 20rpx;overflow: hidden;}
+.list_item .i_tit{font-size: 32rpx;color: #333; margin-top:15rpx;}
+.list_item .i_message{font-size: 24rpx;color: #a5a5a5; margin-top:10rpx;}
+.list_item .i_btn{width: 100rpx;height: 44rpx;line-height: 44rpx;border-radius: 20rpx;text-align: center;font-size: 20rpx;color: #fff;position: absolute;right: 30rpx;top: 58rpx;background: -webkit-linear-gradient(left, #3daded , #5e51f5);  background: -o-linear-gradient(right, #3daded , #5e51f5); background: -moz-linear-gradient(right, #3daded , #5e51f5);background: linear-gradient(to right, #3daded , #5e51f5);}
+.list_item .i_btnimg{width: 50rpx;position: absolute;right: 80rpx;top: 30rpx; }
+.list_item .i_btnimg image{ display: block; width: 100%;border-radius: 0;}
+.list_item .i_btnimg.btn{width: 140rpx;right: 60rpx;}
+.list.yellow image text{ position: absolute;bottom: 0; color: #fff;display: block;background: rgba(0,0,0,0.3); font-size: 20rpx; width: 100%; text-align: center}
+.list.yellow .i_tit text{font-size: 20rpx; color: #fbd435; padding-left: 10rpx;}
+.list.yellow .i_btn{background: -webkit-linear-gradient(left, #fbd435 , #fbb61f);  background: -o-linear-gradient(right, #fbd435 , #fbb61f); background: -moz-linear-gradient(right, #fbd435 , #fbb61f);background: linear-gradient(to right, #fbd435 , #fbb61f);}
+
 .more{font-size: 20rpx;text-align: center;color: #ddd;margin-top: 10rpx;line-height: 30rpx;}
 
 .alert{position: fixed;z-index: 99;left: 0;top: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.5);}
+
+
+
+.tx_modal{ position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, .3);z-index: 300}
+.tx_modal .tx_data{ background: #fff; width: 75%; margin: 40% auto; border-radius: 20rpx;}
+.tx_modal .tx_data .tx_title{ position: relative; color: #fff; height: 90rpx;line-height:90rpx;border-radius: 20rpx 20rpx 0 0; font-size: 36rpx;background: -webkit-linear-gradient(left, #3daded , #5e51f5);  background: -o-linear-gradient(right, #3daded , #5e51f5); background: -moz-linear-gradient(right, #3daded , #5e51f5);background: linear-gradient(to right, #3daded , #5e51f5); text-align: center}
+.tx_modal .tx_title .image{position: absolute; display: block;  right: 0;top:0;width: 90rpx; height: 90rpx;}
+.tx_modal .tx_title .image image{width: 30rpx; height: 30rpx; margin: 0 auto}
+
+.tx_modal .tx_data .message{ padding: 30rpx 40rpx;}
+.tx_modal .tx_data .message image{ width: 120rpx; height: 120rpx; margin: 0 auto; margin-top: -80rpx; position: relative; z-index: 2; display: block}
+.tx_modal .message .msg_title{ text-align: center; display: block; font-size: 32rpx;}
+.tx_modal .message .msg_item{ margin-bottom: 20rpx; overflow: hidden; font-size: 24rpx; color: #999; padding: 20rpx 0; }
+.tx_modal .message .msg_titles{ text-align: center; display: block; font-size: 36rpx;color: #f3a53b }
+.tx_modal .message .msg_items{ text-align: center; margin-bottom: 20rpx; overflow: hidden; font-size: 24rpx; color: #f3a53b; padding: 20rpx 0; }
+.tx_modal .copy_text{ width: 60%; margin: 0 auto; text-align: center; height: 70rpx; line-height: 70rpx; color: #fff; border-radius: 40rpx; background: -webkit-linear-gradient(left, #3daded , #5e51f5);  background: -o-linear-gradient(right, #3daded , #5e51f5); background: -moz-linear-gradient(right, #3daded , #5e51f5);background: linear-gradient(to right, #3daded , #5e51f5);}
+
+
+.tj_modal{ position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, .3);z-index: 300}
+.tj_modal .tj_data{ width: 75%; margin: 30% auto; border-radius: 20rpx; position: relative}
+.tj_modal .tj_data .bgimg{ width: 100%; display: block}
+.tj_modal .tj_data .closed{position: absolute; display: block;width: 90rpx; height: 90rpx;right: 0;top:0;}
+.tj_modal .tj_data .closed image{width: 30rpx; height: 30rpx; margin-top: 30rpx;margin-left: 30rpx;}
+
+.tj_modal .tj_data .message{position: absolute;top:250rpx; left: 0; right: 0; padding: 30rpx 40rpx;}
+.tj_modal .message .msg_title{ text-align: center; display: block; font-size: 36rpx; color: #fff;margin-bottom: 20rpx; }
+.tj_modal .message .msg_item{ overflow: hidden; font-size: 30rpx; padding: 10rpx 0; text-align: center; color: #ffd825 }
+.tj_modal .item_btns{ margin: 50rpx 40rpx;}
+.tj_modal .item_btns .btns{ color: #eee; text-align: center}
+.tj_modal .item_btns2{ margin: 50rpx 0;}
+.tj_modal .item_btns2 .btns2{ color: #eee; text-align: center;width: 50%; float: left}
+.tj_modal .copy_text{ width: 90%; margin: 0 auto; text-align: center; height: 80rpx; line-height: 80rpx; color: #ca4c01; background: #ffd825; border-radius: 10rpx; box-shadow: 2px 2px 2px #ca4c01; margin-bottom: 15rpx;}

@@ -15,14 +15,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    that.getdata();
+    
   },
   getdata: function () {
     var that = this;
     var ids_data = wx.getStorageSync('user_ids');
     wx.request({
-      url: newsList + '?page=' + page + '&openid=' + ids_data['openId'],
+      url: newsList,
+	  data: { uniqueId: ids_data['uniqueId'], gameId: app.globalData.gameId,page:page },
       success: function (res) {
         var callback = res.data;
         console.log(callback)
@@ -38,7 +38,7 @@ Page({
     var dst = e.currentTarget.dataset;
     // console.log(dst);
     wx.navigateTo({
-      url: 'news_show/news_show?id=' + dst.id,
+      url: 'news_show/news_show?id=' + dst.id + '&title=' + dst.title + '&content=' + dst.content,
     })
 
   },
@@ -54,7 +54,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    that.getdata();
   },
 
   /**
@@ -84,15 +85,12 @@ Page({
   onReachBottom: function () {
 
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    return {
-      title: '你想玩的游戏这里都有',
-      imageUrl: '/image/zf_img.png',
-      path: '/page/index/index?shareToken=' + app.globalData.token,
-    };
-  }
+	//分享功能
+	onShareAppMessage: function () {
+	  return {
+		title:'乐游疯狂游戏盒子，一个玩游戏还能赚钱的盒子',
+		imageUrl:'/image/share_1.jpg',
+		path: '/page/index/index?shareToken=' + app.globalData.token,
+	  };
+	}
 })
